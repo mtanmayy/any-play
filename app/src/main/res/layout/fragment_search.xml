@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frag_search_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/results_loading_placeholder"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:src="@drawable/loading_icon"
+            android:visibility="invisible"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="56dp"
+            app:layout_constraintTop_toBottomOf="@id/test_search_query" />
+
+        <EditText
+            android:id="@+id/test_search_query"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="Enter url here"
+            android:drawablePadding="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="4dp"
+            android:drawableStart="@drawable/ic_search"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/edit_text_bg"
+            android:inputType="text" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_results_root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="8dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="?attr/app_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/test_search_query">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/search_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="5dp"
+                    app:srcCompat="@drawable/ic_placeholder_song"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/search_name_artist_grp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:weightSum="100"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search_img" >
+
+                    <TextView
+                        android:id="@+id/search_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textAppearance="@style/TextAppearance.AppCompat.SearchResult.Title"
+                        android:text="SONG NAME" />
+
+                    <TextView
+                        android:id="@+id/search_artist"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="50"
+
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+                        android:text="ARTIST" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/search_name_artist_grp">
+
+                    <ImageView
+                        android:id="@+id/img_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_like"
+                        app:layout_constraintEnd_toEndOf="@id/like_count"
+                        app:layout_constraintStart_toStartOf="@id/like_count"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/like_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="LIKE_COUNT"
+                        android:textAlignment="center"
+
+                        app:layout_constraintEnd_toStartOf="@id/dislike_count"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_like" />
+
+                    <ImageView
+                        android:id="@+id/img_dislike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/ic_dislike"
+                        app:layout_constraintEnd_toEndOf="@id/dislike_count"
+                        app:layout_constraintStart_toStartOf="@id/dislike_count"
+
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/dislike_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="sans-serif-condensed-light"
+                        android:text="DISLIKE_COUNT"
+
+                        android:textAlignment="center"
+                        app:layout_constraintStart_toEndOf="@id/like_count"
+                        app:layout_constraintTop_toBottomOf="@id/img_dislike" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/search_cname_grp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:weightSum="100"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_results_root_layout">
+
+            <TextView
+                android:id="@+id/search_tvCName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="20"
+
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Name"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/search_etCName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="80"
+
+                android:hint="Enter song name" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_artist_grp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:weightSum="100"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_cname_grp">
+
+            <TextView
+                android:id="@+id/search_tvArtist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="20"
+
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Artist"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/search_etArtist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="80"
+
+                android:hint="Enter artist name" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/search_btn_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_artist_grp"
+            android:layout_marginTop="5dp"
+
+            android:text="DOWNLOAD"/>
+
+        <TextView
+            android:id="@+id/starting_download_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="@id/search_btn_download"
+            app:layout_constraintEnd_toEndOf="@id/search_btn_download"
+            app:layout_constraintTop_toBottomOf="@id/search_btn_download"
+
+            android:layout_marginTop="37dp"
+
+            android:visibility="invisible"
+
+            android:gravity="center"
+            android:text="Starting download\nPlease wait.."
+            android:fontFamily="sans-serif-condensed-light" />
+
+        <TextView
+            android:id="@+id/search_tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="@id/search_progress_bar"
+            app:layout_constraintEnd_toEndOf="@id/search_progress_bar"
+            app:layout_constraintTop_toTopOf="@id/search_progress_bar"
+            app:layout_constraintBottom_toBottomOf="@id/search_progress_bar"
+
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="20sp"/>
+
+        <ProgressBar
+            android:id="@+id/search_progress_bar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="@id/search_btn_download"
+            app:layout_constraintTop_toBottomOf="@id/search_btn_download"
+            app:layout_constraintEnd_toStartOf="@id/search_download_eta"
+
+            style="?android:progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/indeterminate_progress_bar"
+            android:progressTint="@color/orange" />
+
+        <TextView
+            android:id="@+id/search_download_eta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toEndOf="@id/search_progress_bar"
+            app:layout_constraintTop_toBottomOf="@id/search_btn_download"
+            app:layout_constraintEnd_toEndOf="@id/search_btn_download"
+            android:layout_marginTop="40dp"
+
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="15sp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

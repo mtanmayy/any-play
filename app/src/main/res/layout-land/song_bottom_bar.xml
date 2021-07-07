@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/bottom_bar_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/app_bg"
+    android:padding="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottom_bar_cardview"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:cardCornerRadius="4dp">
+
+        <ImageView
+            android:id="@+id/bottom_bar_song_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_placeholder_song"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/bottom_bar_song_name"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintStart_toEndOf="@id/bottom_bar_cardview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bottom_bar_play_btn"
+        app:layout_constraintHorizontal_bias="0"
+
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="4dp"
+
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="?attr/app_text"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="SONG NAME" />
+
+    <TextView
+        android:id="@+id/bottom_bar_artist_name"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintStart_toEndOf="@id/bottom_bar_cardview"
+        app:layout_constraintTop_toBottomOf="@id/bottom_bar_song_name"
+        app:layout_constraintEnd_toStartOf="@id/bottom_bar_play_btn"
+        app:layout_constraintHorizontal_bias="0"
+
+        android:layout_marginStart="5dp"
+
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="?attr/app_text"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="ARTIST" />
+
+    <ImageView
+        android:id="@+id/bottom_bar_play_btn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:layout_marginEnd="10dp"
+
+        android:src="@drawable/ic_play_bb"
+        app:tint="@color/orange" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

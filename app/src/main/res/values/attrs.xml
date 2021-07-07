@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    
+    <attr name="app_bg" format="color"/>
+    <attr name="app_text" format="color"/>
+    <attr name="_statusBarColor" format="color"/>
+    <attr name="bottom_bar_separation" format="color" />
+    <attr name="search_et_bg" format="color" />
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="edit_text">
+        <item name="cornerRadius">10dp</item>
+        <item name="android:background">#A19C9C</item>
+        <item name="android:radius">10dp</item>
+    </style>
+
+</resources>

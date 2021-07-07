@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.songview.SongViewActivity">
+
+        <ImageView
+            android:id="@+id/sv_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="10dp"
+
+            android:src="@drawable/ic_placeholder_song" />
+
+        <TextView
+            android:id="@+id/sv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sv_img"
+
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="10dp"
+
+            android:textColor="?attr/app_text"
+            android:gravity="center"
+            android:text="SONG NAME"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="30sp"
+            android:lines="1"
+            android:ellipsize="end"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/sv_artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="@id/sv_name"
+            app:layout_constraintEnd_toEndOf="@id/sv_name"
+            app:layout_constraintTop_toBottomOf="@id/sv_name"
+
+            android:layout_marginHorizontal="20dp"
+
+            android:textColor="?attr/app_text"
+            android:gravity="center"
+            android:text="ARTIST"
+            android:lines="1"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-condensed-light"
+            android:textSize="20sp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/sv_song_curr_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sv_seekbar"
+
+            android:textColor="?attr/app_text"
+            android:fontFamily="sans-serif-condensed-light"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="4dp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/sv_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sv_artist"
+
+            android:thumbTint="@color/orange"
+            android:progressTint="@color/orange"
+            android:progressBackgroundTint="@color/gray"
+
+            android:layout_marginTop="40sp"/>
+
+        <TextView
+            android:id="@+id/sv_song_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sv_seekbar"
+
+            android:textColor="?attr/app_text"
+            android:fontFamily="sans-serif-condensed-light"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="4dp" />
+
+        <ImageView
+            android:id="@+id/sv_play_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sv_seekbar"
+            app:layout_constraintBottom_toTopOf="@id/sv_shuffle_btn"
+
+            android:src="@drawable/ic_play"
+            app:tint="@color/orange"
+
+            android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:id="@+id/sv_prev_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sv_play_btn"
+            app:layout_constraintTop_toBottomOf="@id/sv_seekbar"
+            app:layout_constraintBottom_toTopOf="@id/sv_shuffle_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_previous" />
+
+        <ImageView
+            android:id="@+id/sv_next_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            app:layout_constraintStart_toEndOf="@id/sv_play_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sv_seekbar"
+            app:layout_constraintBottom_toTopOf="@id/sv_shuffle_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_next"
+
+            android:text="NEXT" />
+
+        <ImageView
+            android:id="@+id/sv_loop_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintStart_toEndOf="@id/sv_play_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sv_seekbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_loop"
+
+            android:text="LOOP" />
+
+        <ImageView
+            android:id="@+id/sv_shuffle_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sv_play_btn"
+            app:layout_constraintTop_toBottomOf="@id/sv_seekbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_marginTop="100dp"
+            android:src="@drawable/ic_shuffle"
+
+            android:text="SHUFFLE" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

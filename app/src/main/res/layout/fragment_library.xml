@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/app_bg"
+    tools:context=".ui.library.LibraryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+                <ImageView
+                    android:id="@+id/no_song_downloaded_ic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/no_songs_downloaded_tv"
+
+                    android:src="@drawable/ic_download" />
+
+                <TextView
+                    android:id="@+id/no_songs_downloaded_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintTop_toBottomOf="@id/filter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="1dp"
+
+                    android:gravity="center"
+                    android:text="Download songs to\nlisten offline"
+                    android:textColor="?attr/app_text"
+                    android:fontFamily="sans-serif-condensed-light"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="8dp"
+
+                    android:hint="Search your songs"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="4dp"
+                    android:drawableStart="@drawable/ic_search"
+
+                    android:background="@drawable/edit_text_bg"
+                    android:lines="1"
+                    android:inputType="text" />
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/songs_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="60dp"
+
+                    tools:listitem="@layout/song_item"
+                    android:background="?attr/app_bg"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
