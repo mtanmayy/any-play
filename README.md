@@ -28,9 +28,9 @@ Download audio files from YouTube videos and listen offline.
 
 ## Installation and Updates
 
-* Latest stable apk can be downloaded from [here]()<br>
+* Latest stable apk can be downloaded from [here](https://github.com/MTanmay01/any-play/releases/download/v1.0/app-release.apk)<br>
 
-* To download apk for a specific architecture, or to download previous versions, check the [releases]() page.
+* To download apk for a specific architecture, or to download previous versions, check the [releases](https://github.com/MTanmay01/any-play/releases) page.
 
 
 #### NOTE
